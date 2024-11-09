@@ -10,4 +10,20 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'E-Learning';
+  isLoginFormVisible :boolean = false;
+  toggleForm(val:boolean){
+    this.isLoginFormVisible = val;
+  }
+  openModal(){
+    const modal = document.getElementById('myModal');
+    if(modal){
+      modal.style.display = 'block';
+    }
+  }
+  closeModal(){
+    const modal = document.getElementById('myModal');
+    if(modal){
+      modal.style.display = 'none';
+    }
+  }
 }
