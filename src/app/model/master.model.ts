@@ -49,4 +49,40 @@ export interface IcourseVideos{
   videoTitle: string,
   videoId :number,
   videoUrl: string,
+
+}
+export class Login{
+  userName: string
+  password: string
+
+  constructor(){
+    this.userName = "";
+    this.password = "";
+  }
+}
+export class User{
+  userId: number;
+  userName: string;
+  emailId: string;
+  fullName: string;
+  role: string;
+  createdDate: Date;
+  password: string;
+  projectName: string;
+  refreshToken: string;
+  refreshTokenExpiryTime:string;
+
+  constructor(){
+    this.userId = 0;
+    this.userName = "";
+    this.emailId = "";
+    this.fullName = "";
+    this.role = "";
+    this.createdDate = new Date();
+    this.password = "";
+    this.projectName = "";
+    this.refreshToken = "";
+    this.refreshTokenExpiryTime = "";
+  }
+
 }

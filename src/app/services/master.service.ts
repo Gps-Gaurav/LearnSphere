@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IApiResponse } from '../model/master.model';
+import { IApiResponse, Login, User } from '../model/master.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -17,5 +17,11 @@ export class MasterService {
   }
   getCourseVideosbyCourseId(id: number): Observable<IApiResponse>{
     return this.http.get<IApiResponse>(`${this.apiUrl}GetCourseVideosbyCourseId?courseId=${id}`)
+  }
+  addNewUser(obj:User): Observable<IApiResponse>{
+    return this.http.post<IApiResponse>(`${this.apiUrl}AddNewUser`, obj)
+  }
+  onLogin(obj:Login): Observable<IApiResponse>{
+    return this.http.post<IApiResponse>(`${this.apiUrl}login`, obj)
   }
 }
