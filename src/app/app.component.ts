@@ -1,12 +1,12 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { IApiResponse, Login, User } from './model/master.model';
 import { FormsModule } from '@angular/forms';
 import { MasterService } from './services/master.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule],
+  imports: [RouterOutlet, FormsModule,RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

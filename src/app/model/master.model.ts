@@ -86,3 +86,26 @@ export class User{
   }
 
 }
+
+export class IEnrollment{
+  enrollmentId: number;
+  userId : number;
+  courseId : number;
+  enrolledDate : Date;
+  isCompleted : boolean;
+  courseName : string;
+  thumbnailUrl : string;
+  courseDescription: string;
+
+   constructor() {
+    this.enrollmentId = 0;
+    this.userId = 0;
+    this.courseId = 0;
+    this.enrolledDate = new Date();
+    this.isCompleted = false;
+    this.courseName = "";
+    this.thumbnailUrl = "";
+    this.courseDescription = "";
+
+   }
+}

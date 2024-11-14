@@ -14,9 +14,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#courses">Courses</a>
-        </li>
+
         @if(loggedUserData.userId ==0){
           <li class="nav-item">
             <a class="nav-link" (click)="openModal()">Register</a>
@@ -26,6 +24,9 @@
           </li>
         }
         @else{
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/my-courses']" >My Courses</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link">{{loggedUserData.emailId}}</a>
           </li>
