@@ -74,11 +74,13 @@
             <h2 class="text-center">Login to Your Account</h2>
             <form action="#" method="post" class="w-100 mx-auto">
               <div class="mb-3">
-                <label for="emailLogin" class="form-label">User Name</label>
+                <label for="userName" class="form-label">User Name</label>
                 <input
-                type="text" name="fullName" [(ngModel)]="userLoginObj.userName"
+                  type="text"
+                  name="userName"
+                  [(ngModel)]="userLoginObj.userName"
                   class="form-control"
-                  id="emailLogin"
+                  id="userName"
                   required
                 />
               </div>
@@ -86,13 +88,19 @@
                 <label for="password" class="form-label">Password</label>
                 <input
                   type="password"
-                  name="password" [(ngModel)]="userLoginObj.password"
+                  name="password"
+                  [(ngModel)]="userLoginObj.password"
                   class="form-control"
                   id="password"
                   required
                 />
               </div>
-              <button type="button" onclick="onLogin()" class="btn btn-primary">Login</button>
+              <button
+              type="button"
+              (click)="onlogin()"
+              class="btn btn-primary">
+                Login
+              </button>
             </form>
           </div>
         </section>
@@ -104,22 +112,54 @@
             <form action="#" method="post" class="w-100 mx-auto">
               <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
-                <input type="text" name="fullName" [(ngModel)]="userRegisterObj.fullName" class="form-control" id="name"  required />
+                <input
+                  type="text"
+                  name="fullName"
+                  [(ngModel)]="userRegisterObj.fullName"
+                  class="form-control"
+                  id="name"
+                  required
+                />
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email"name="emailId" [(ngModel)]="userRegisterObj.emailId" class="form-control" id="email" required />
+                <input
+                  type="email"
+                  name="emailId"
+                  [(ngModel)]="userRegisterObj.emailId"
+                  class="form-control"
+                  id="email"
+                  required
+                />
               </div>
               <div class="mb-3">
                 <label for="userName" class="form-label">User Name</label>
-                <input type="text"name="userName" [(ngModel)]="userRegisterObj.userName" class="form-control" id="userName" required />
+                <input
+                  type="text"
+                  name="userName"
+                  [(ngModel)]="userRegisterObj.userName"
+                  class="form-control"
+                  id="userName"
+                  required
+                />
               </div>
               <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="text"name="password" [(ngModel)]="userRegisterObj.password" class="form-control" id="password" required />
+                <input
+                  type="text"
+                  name="password"
+                  [(ngModel)]="userRegisterObj.password"
+                  class="form-control"
+                  id="password"
+                  required
+                />
               </div>
 
-              <button type="button" (click)="onRegister()" class="btn btn-primary">
+              <button
+                type="button"
+                (click)="onRegister()"
+                class="btn btn-primary"
+              >
                 Register Now
               </button>
             </form>

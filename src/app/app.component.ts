@@ -17,7 +17,8 @@ export class AppComponent {
   isLoginFormVisible :boolean = true;
 
   userRegisterObj : User = new User();
-  userLoginObj : Login = new User();
+  userLoginObj : Login = new Login();
+
   masterSrv = inject(MasterService)
   toggleForm(val:boolean){
     this.isLoginFormVisible = val;
@@ -44,7 +45,7 @@ export class AppComponent {
    }
  })
   }
-  onLogin(){
+  onlogin(){
  this.masterSrv.onLogin(this.userLoginObj).subscribe((res:IApiResponse)=>{
    if(res.result){
      alert(res.message);
