@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { IApiResponse, Login, User } from './model/master.model';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +10,14 @@ import { MasterService } from './services/master.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+  ngOnInit(): void {
+    const localData = localStorage.getItem('learningUser');
+    if(localData != null){
+    const parseData = JSON.parse(localData);
+    this.loggedUserData= parseData;
+    }
+  }
   title = 'E-Learning';
   isLoginFormVisible :boolean = true;
 
@@ -20,7 +27,7 @@ export class AppComponent {
   masterSrv = inject(MasterService)
 
   loggedUserData : User = new User();
- 
+
   toggleForm(val:boolean){
     this.isLoginFormVisible = val;
   }
