@@ -3,8 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import { IApiResponse, Login, User } from './model/master.model';
 import { FormsModule } from '@angular/forms';
 import { MasterService } from './services/master.service';
-import { json } from 'stream/consumers';
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -20,8 +18,16 @@ export class AppComponent {
   userLoginObj : Login = new Login();
 
   masterSrv = inject(MasterService)
+
+  loggedUserData : User = new User();
+ 
   toggleForm(val:boolean){
     this.isLoginFormVisible = val;
+  }
+
+  onlogOut(){
+    this.loggedUserData = new User();
+    localStorage.removeItem('learningUser')
   }
   openModal(){
     const modal = document.getElementById('myModal');
@@ -50,6 +56,7 @@ export class AppComponent {
    if(res.result){
      alert(res.message);
      localStorage.setItem("learningUser", JSON.stringify(res.data))
+     this.loggedUserData = res.data;
      this.closeModal();
    }else{
      alert(res.message);
