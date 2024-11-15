@@ -14,7 +14,7 @@ export const routes: Routes = [
     component: HomeComponent
   },
   {
-    path:"course-details",
+    path:"course-details/:id",
     component: CourseDetailsComponent
   },
   {
