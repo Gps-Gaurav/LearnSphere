@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { IApiResponse, IcourseVideos, IEnrollment, User } from '../../model/master.model';
+import { IApiResponse, IEnrollment, User } from '../../model/master.model';
 import { MasterService } from '../../services/master.service';
 import { SlicePipe } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
@@ -23,7 +23,7 @@ export class MyCoursesComponent implements OnInit {
   constructor(){
     this.activatedRoute.params.subscribe((res:any)=>{
       this.courseId = res.id;
-    
+
     })
   }
   ngOnInit(): void {
