@@ -13,12 +13,6 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  // App Information
-  private readonly APP_INFO = {
-    currentDate: '2024-12-23 17:23:59',
-    currentUser: 'Gps-Gaurav',
-    version: '1.0.0'
-  };
 
   private readonly STORAGE_KEY = 'learningUser';
 
@@ -152,8 +146,6 @@ export class AppComponent implements OnInit {
   private logActivity(action: string, detail: string): void {
     console.log(`
 [${action}]
-Timestamp: ${this.APP_INFO.currentDate}
-User: ${this.APP_INFO.currentUser}
 Detail: ${detail}
     `);
   }

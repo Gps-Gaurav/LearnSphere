@@ -1,6 +1,6 @@
 
 .footer-section {
-  background-color: #1a1a1a;
+  background-color: #2e3138;
   color: #ffffff;
   padding-top: 3rem;
 
@@ -71,7 +71,7 @@
         font-size: 0.9rem;
 
         &:hover {
-          color: #17a2b8;
+          color: #097383;
           padding-left: 5px;
         }
       }
@@ -84,7 +84,7 @@
       font-size: 0.9rem;
 
       i {
-        color: #17a2b8;
+        color: #13464e;
         width: 20px;
       }
     }

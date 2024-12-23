@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../model/master.model';
 
 @Component({
   selector: 'app-footer',
@@ -7,20 +8,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css'
 })
-
 export class FooterComponent implements OnInit {
-  currentYear: number = new Date().getFullYear();
+  currentYear: number = new Date().getFullYear(); // Initialize with an
+  appInfo = {
+    currentDate: new Date().toLocaleDateString(),
+    currentUser: "Guest"
+  };
+
+  constructor() {}
 
   ngOnInit(): void {
-
-    this.currentYear = new Date().getFullYear();
-
   }
-  appInfo = {
 
-    currentDate: new Date().toLocaleDateString(),
-
-    currentUser: 'Guest'
-
-  };
 }

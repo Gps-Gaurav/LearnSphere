@@ -173,18 +173,6 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  private getFromLocalStorage(key: string): any {
-    if (isPlatformBrowser(this.platformId)) {
-      try {
-        const data = localStorage.getItem(key);
-        return data ? JSON.parse(data) : null;
-      } catch (error: any) {
-        this.logActivity('Storage Error', `Failed to retrieve from ${key}: ${error.message}`);
-        return null;
-      }
-    }
-    return null;
-  }
 
   private logActivity(action: string, detail: string): void {
     console.log(`

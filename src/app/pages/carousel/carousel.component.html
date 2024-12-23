@@ -1,7 +1,23 @@
-<section class="hero-section text-center py-5">
-  <div class="container">
-    <h1>Welcome to CourseHub</h1>
-    <p>Explore and enroll in our video courses to enhance your skills.</p>
-    <a href="#courses" class="btn btn-light">Explore Courses</a>
-  </div>
-</section>
+
+<!-- carousel.component.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<div class="carousel-container">
+  <owl-carousel-o [options]="carouselOptions">
+    <ng-container>
+      @for (slide of slides(); track $index){
+      <ng-template carouselSlide>
+        <div class="slide-container">
+          <div class="slide-image" [style.background-image]="'url(' + slide.url + ')'">
+            <div class="overlay"></div>
+            <div class="slide-content">
+              <h2 class="slide-title">{{slide.title}}</h2>
+              <p class="slide-description">{{slide.description}}</p>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    }
+    </ng-container>
+  </owl-carousel-o>
+</div>
+
